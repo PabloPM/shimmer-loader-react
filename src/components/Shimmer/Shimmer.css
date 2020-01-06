@@ -1,0 +1,72 @@
+.shimmer-line {
+  height: 1vh;
+  margin-bottom: 1vh;
+  width: 100%;
+}
+
+.shimmer-block {
+  height: 5vh;
+  margin-bottom: 1vh;
+  width: 100%;
+}
+
+.shimmer-image {
+  height: 5vh;
+  margin-bottom: 1vh;
+  width: 5vh;
+}
+
+.shimmer-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vh;
+  padding: 1vh;
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.shimmer-card-photo {
+  margin-right: 1vh;
+}
+
+.shimmer-card-content {
+  flex-grow: 1;
+}
+
+
+.shimmer-bordered {
+  border-radius: 1vh;
+}
+
+.shimmer-image-circle {
+  border-radius: 50%;
+}
+
+/*
+  Animation
+*/
+
+.shimmer {
+  background-image: linear-gradient(135deg, #ebebeb calc(50% - 100px), #c1c1c1 50%, #ebebeb calc(50% + 100px));
+  background-size:0;
+  position:relative;
+  overflow:hidden;
+}
+
+.shimmer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(200% + 200px);
+  bottom: 0;
+  background-image: inherit;
+  animation: move 2.5s linear infinite reverse; 
+}
+
+@keyframes move{
+  to {
+    transform:translateX(calc(-50% - 100px));
+  }
+}
